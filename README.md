@@ -1,3 +1,18 @@
+# Project Installation 
+
+## Prerequisites 
+Node.js needs to be installed on your computer in order to run the app.
+
+## 1. Clone the repository
+Clone the repository into your computer. 
+
+## 2. Install dependencies
+Type cd `ng-reddit-aww` in your terminal and run `npm install` in order to install all the dependencies.
+
+## 3. Run the app
+Run the app by typing `ng serve -o` in the terminal 
+
+----------------------------------------------------------------------------------------------------
 # NgRedditAww
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.

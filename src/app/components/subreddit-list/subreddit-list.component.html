@@ -1,0 +1,19 @@
+<div class="side-nav">
+  <div class="side-nav-header">
+    <h2>Subreddits</h2>
+    <button class="side-nav-toggle">
+      <i class="fas fa-times"> </i>
+      Subreddits
+    </button>
+  </div>
+  <div class="side-nav-content">
+    <div class="side-nav-item" *ngFor="let subreddit of subreddits">
+      <span
+        (click)="onSubredditClick(subreddit.data.display_name_prefixed)"
+        class="subreddit-name"
+      >
+        {{ subreddit.data.display_name_prefixed }}
+      </span>
+    </div>
+  </div>
+</div>
