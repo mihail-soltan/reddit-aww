@@ -18,10 +18,10 @@ import { SharedService } from 'src/app/shared.service';
 export class RedditListItemComponent implements OnInit, AfterViewInit {
   after: string = '';
   sortBy: string = 'hot';
-  
+
   @ViewChildren('lastPost', { read: ElementRef })
   lastPost!: QueryList<ElementRef>;
-  
+
   @Input() posts: any = [];
   currentSubreddit: string = '';
 
@@ -66,7 +66,7 @@ export class RedditListItemComponent implements OnInit, AfterViewInit {
   }
 
   isThumbnailImage(post: any) {
-    return post.startsWith("https://") ? post : '../../../assets/logo.png';
+    return post.startsWith('https://') ? post : '../../../assets/logo.png';
   }
 
   intersectionObserver() {

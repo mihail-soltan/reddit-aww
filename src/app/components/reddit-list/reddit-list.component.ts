@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { SharedService } from 'src/app/shared.service';
 
@@ -30,7 +30,12 @@ export class RedditListComponent implements OnInit {
   }
 
   onSubredditClick(subreddit: any) {
+    this.goToTop();
     this.currentSubreddit = subreddit;
     this.sharedService.currentSubreddit.next(subreddit);
+  }
+
+  goToTop() {
+    window.scrollTo(0, 0);
   }
 }

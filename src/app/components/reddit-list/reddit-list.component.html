@@ -1,9 +1,9 @@
-<div id="reddit" class="reddit-list">
+<div class="reddit-list">
     <app-subreddit-list
       class="subreddit-list"
       (subredditClick)="onSubredditClick($event)"
       [subreddits]="subreddits"
     ></app-subreddit-list>
-    <a href="#reddit" class="go-up-btn">Go Up</a >
+    <button (click)="goToTop()" class="go-up-btn">Go Up</button >
   <app-reddit-list-item class="post-list"> </app-reddit-list-item>
 </div>
