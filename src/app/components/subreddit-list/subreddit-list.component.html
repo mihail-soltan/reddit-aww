@@ -1,13 +1,15 @@
+<!-- <div id="menuToggle">
 <div class="side-nav">
+
+    <input type="checkbox" />
+    <span></span>
+  <span></span>
+  <span></span>
   <div class="side-nav-header">
     <h2>Subreddits</h2>
-    <button class="side-nav-toggle">
-      <i class="fas fa-times"> </i>
-      Subreddits
-    </button>
   </div>
   <div class="side-nav-content">
-    <div class="side-nav-item" *ngFor="let subreddit of subreddits">
+    <div id="menu" class="side-nav-item" *ngFor="let subreddit of subreddits">
       <span
         (click)="onSubredditClick(subreddit.data.display_name_prefixed)"
         class="subreddit-name"
@@ -16,4 +18,23 @@
       </span>
     </div>
   </div>
+</div>
+</div> -->
+
+<div id="menuToggle">
+  <input type="checkbox" #menu/>
+
+  <span></span>
+  <span></span>
+  <span></span>
+
+  <ul id="menu">
+    <li
+      *ngFor="let subreddit of subreddits"
+      class="subreddit-name"
+      (click)="onSubredditClick(subreddit.data.display_name_prefixed)"
+    >
+      {{ subreddit.data.display_name_prefixed }}
+    </li>
+  </ul>
 </div>

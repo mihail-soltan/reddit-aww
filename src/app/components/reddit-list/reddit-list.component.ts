@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-reddit-list',
@@ -10,7 +11,7 @@ export class RedditListComponent implements OnInit {
   subreddits: any = [];
   currentSubreddit: string = 'r/aww';
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private sharedService: SharedService) {}
 
   ngOnInit(): void {
     this.getSubreddits();
@@ -25,12 +26,11 @@ export class RedditListComponent implements OnInit {
           !sub.data.display_name_prefixed.startsWith('r/AmItheAsshole') &&
           !sub.data.display_name_prefixed.startsWith('r/interestingasfuck') 
       );
-      console.log(this.subreddits);
     });
   }
 
   onSubredditClick(subreddit: any) {
     this.currentSubreddit = subreddit;
-    console.log(this.currentSubreddit);
+    this.sharedService.currentSubreddit.next(subreddit);
   }
 }

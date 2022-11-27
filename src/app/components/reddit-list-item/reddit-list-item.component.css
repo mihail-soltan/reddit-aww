@@ -9,6 +9,10 @@
     box-shadow: 0 0 5px #ccc;
     width: 50%;
 }
+
+.subreddit-name {
+    color: #ff4500;
+}
 .title-container {
     display: flex;
     flex-direction: column-reverse;
@@ -35,7 +39,7 @@ a:hover {
 
 .title-date {
     font-size: 0.8em;
-    color: #999;
+    color: #444;
     margin-top: 0;
     margin-bottom: 0;
     text-align: end;

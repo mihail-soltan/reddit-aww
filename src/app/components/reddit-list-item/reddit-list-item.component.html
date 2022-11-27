@@ -1,8 +1,7 @@
-<h2>{{ title }}</h2>
-<h2>{{ after }}</h2>
+<h2 class="subreddit-name">Explore posts from {{ currentSubreddit }}</h2>
 <div *ngFor="let post of posts; let i = index" class="post">
   <div class="flex" *ngIf="i + 1 === posts.length" #lastPost>
-    <img src="{{ post.data.thumbnail }}" alt="thumbnail" class="thumbnail" />
+    <img   [src]="isThumbnailImage(post.data.thumbnail)" alt="thumbnail" class="thumbnail" />
     <div class="title-container">
       <h3 class="title-date">
         posted in {{ post.data.subreddit_name_prefixed }} on
@@ -14,7 +13,7 @@
     </div>
   </div>
   <div class="flex" *ngIf="i + 1 !== posts.length">
-    <img src="{{ post.data.thumbnail }}" alt="thumbnail" class="thumbnail" />
+    <img  [src]="isThumbnailImage(post.data.thumbnail)" alt={{post.data.title}} class="thumbnail" />
     <div class="title-container">
       <h3 class="title-date">
         posted in {{ post.data.subreddit_name_prefixed }} on

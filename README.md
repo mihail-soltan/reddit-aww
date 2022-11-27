@@ -12,6 +12,20 @@ Type cd `ng-reddit-aww` in your terminal and run `npm install` in order to insta
 ## 3. Run the app
 Run the app by typing `ng serve -o` in the terminal 
 
+### Project Description
+
+When the project loads, a list of the first 25 posts from the subreddit r/aww is loaded. 
+The posts are sorted by 'hot'. Scrolling to the end of the list will trigger another 25 
+posts to load.In the upper left corner there's a hamburger menu button. Inside the menu there are  
+25 subreddits available. When clicking on the subreddit, it will empty the previously retrieved
+posts and return the first 25 posts. The infinite scrolling feature works for all the subreddit.
+No external library or plugin was used. It was implented with the help of IntersectionObserver.
+The app is responsive.
+Each post has:
+- a thumbnail if available (else the reddit logo is displayed) 
+- a title (if clicked, it will redirect to another tab with the original post)
+- full date when it was posted
+- the name of the subreddit in which it was posted
 ----------------------------------------------------------------------------------------------------
 # NgRedditAww
 

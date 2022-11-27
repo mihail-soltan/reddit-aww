@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-subreddit-list',
@@ -8,8 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class SubredditListComponent implements OnInit {
 
   @Input() subreddits: any = [];
-  // output event emitter
   @Output() subredditClick = new EventEmitter<string>();
+  @ViewChild('menu') menu!: ElementRef;
 
   constructor() { }
 
@@ -19,9 +19,9 @@ export class SubredditListComponent implements OnInit {
 
   onSubredditClick(subreddit: string){
     this.subredditClick.emit(subreddit);
+    this.menu.nativeElement.checked = false;
   }
 
-  // emit subreddit to parent component (reddit-list)
   
   
 
