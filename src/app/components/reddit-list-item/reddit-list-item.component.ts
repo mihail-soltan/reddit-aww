@@ -27,6 +27,8 @@ export class RedditListItemComponent implements OnInit, AfterViewInit {
 
   observer: any;
 
+  loading: boolean = false;
+
   constructor(
     private apiService: ApiService,
     private sharedService: SharedService
@@ -47,11 +49,13 @@ export class RedditListItemComponent implements OnInit, AfterViewInit {
   }
 
   getPosts(): void {
+    this.loading = true;
     this.apiService
       .getPosts(this.currentSubreddit, this.after, this.sortBy)
       .subscribe((res: any) => {
         this.posts = [...this.posts, ...res.data.children];
         this.after = res.data.after;
+        this.loading = false;
       });
   }
 
