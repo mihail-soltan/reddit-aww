@@ -1,11 +1,11 @@
 <div id="menuToggle">
-  <input type="checkbox" #menu/>
+  <input type="checkbox" #menu [checked]="menuChecked" />
 
   <span></span>
   <span></span>
   <span></span>
 
-  <ul id="menu">
+  <ul (click)="handleMenu($event)" class="menu" id="menu">
     <li
       *ngFor="let subreddit of subreddits"
       class="sub-name"

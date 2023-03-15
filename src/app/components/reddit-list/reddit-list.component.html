@@ -1,9 +1,11 @@
-<div class="reddit-list">
+<div (click)="handleMenu($event)" class="reddit-list">
     <app-subreddit-list
       class="subreddit-list"
       (subredditClick)="onSubredditClick($event)"
       [subreddits]="subreddits"
+      [handleMenu]="handleMenu"
+      [menuChecked]="showMenu"
     ></app-subreddit-list>
     <button (click)="goToTop()" class="go-up-btn">Go Up</button >
-  <app-reddit-list-item class="post-list"> </app-reddit-list-item>
+  <app-reddit-list-item id="reddit-list-item" class="post-list"> </app-reddit-list-item>
 </div>
